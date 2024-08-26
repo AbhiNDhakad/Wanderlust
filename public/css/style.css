@@ -1,0 +1,128 @@
+body{
+background-color: antiquewhite;
+font-family: "Plus Jakarta Sans", sans-serif;
+display:flex;
+flex-direction:column;
+min-height: 100vh;
+}
+.container
+{
+    flex:1;
+}
+.fa-compass
+{
+    color: #fe424d !important;
+    font-size: 2rem;
+}
+.navbar{
+    height:5rem;
+}
+.nav-link{
+    color:#222222 !important;
+}
+@media screen and (468px<width<768px)
+{
+    .f-info{
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 1rem !important;
+    }
+    footer {
+        width:100%;
+        height:6rem;
+        padding: 1rem 1rem;
+        padding-bottom: 1rem;
+        background-color:#dddddd !important;
+    }
+}
+@media screen and (min-width:768px)
+{
+    .f-info{
+        display:flex;
+        flex-direction: row;
+        justify-content: space-between;
+        vertical-align: middle;
+        font-size: 1rem !important;
+    }
+    footer {
+        width:100%;
+        height:4rem;
+        padding: 1rem 3rem;
+        padding-bottom: 1rem;
+        background-color:#dddddd !important;
+    }
+}
+
+@media screen and (max-width:468px) {
+
+    .f-info{
+        display: flex;
+        flex-direction: column;
+        font-size: 1rem !important;
+    }
+    footer {
+        width:100%;
+        height:6rem;
+        padding: 12px 10px;
+        background-color:#dddddd !important;
+    }
+}
+.f-info-links a{
+    text-decoration: none;
+    color:#222222 !important;
+}
+.f-info-links a:hover{
+    text-decoration: underline;
+}
+
+
+.f-info-socials i{
+    margin-right: 0.5rem;
+    
+    color:#222222 !important;
+}
+
+.listing-card{
+ border:none !important;
+ margin-bottom: 1rem;
+}
+.card-img-top{
+    border-radius: 1rem !important;
+    width:100% !important;
+    object-fit: cover;
+} 
+ 
+.card-text p {
+    text-decoration: none !important;
+    font-weight: 400 !important;
+}
+.card-img-overlay
+{
+    opacity: 0;
+}
+.card-img-overlay:hover
+{
+    opacity: 0.2;
+    background-color: white;
+} 
+.listing-link
+{
+    text-decoration: none !important;
+}
+
+.add-btn
+{
+    background-color: #fe424d !important;
+    border: none !important;
+}
+.edit-btn
+{
+    background-color: #fe424d !important;
+    border: none !important;
+}
+.btns
+{
+    display:flex;
+}
