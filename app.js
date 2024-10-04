@@ -100,10 +100,10 @@ app.use("/",userRouter);
 //         console.log(registeredUser);
 //     });
 
-app.get("/",(req,res)=>
-{
-    res.send("root is working");
-});
+// app.get("/",(req,res)=>
+// {
+//     res.send("root is working");
+// });
 
 //for invalid route
 app.all("*",(req,res,next)=>
