@@ -1,5 +1,5 @@
 const Listing=require("../models/listing.js");
-
+const {mapIn}=require("../middleware.js");
 module.exports.index=async(req,res)=>
     {
     const allListings= await Listing.find({});
@@ -24,7 +24,8 @@ module.exports.showListing=  async(req,res)=>
             req.flash("error","you requested listing for does not exist");
             res.redirect("/listings");
         }
-        res.render("listings/show.ejs",{list});
+      let coordinates= await mapIn(list.location.city);
+        res.render("listings/show.ejs",{list,coordinates});
     } 
 
 module.exports.newListing=async(req,res,next)=>    
@@ -46,7 +47,7 @@ module.exports.renderEditForm=async(req,res)=>
     const list= await Listing.findById(id);
     let orignalImageUrl=list.image.url;
      orignalImageUrl=orignalImageUrl.replace("/upload","/upload/h_300,w_250");
-     console.log(orignalImageUrl);
+    //  console.log(orignalImageUrl);
     if(!list){
         req.flash("error","you requested listing for does not exist");
         res.redirect("/listings");

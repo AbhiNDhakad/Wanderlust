@@ -5,15 +5,14 @@
             <h2><b> <%= list.title%> </b></h2>
         </div>
 
-    <div class="card  listing-card col-8 offset-3" style="width: 50%; ">
-        <img class="card-img-top" style="height:20rem !important" src="<%=list.image.url %>" alt="Card image cap">
+    <div class="card show-card col-8 offset-3 " style="width: 50%; padding: 0px; ">
+        <img class="card-img-top" style="height:20rem!important" src="<%=list.image.url %>" alt="Card image cap">
         <div class="card-body">
           <p class="card-text">
-           
            <i><b>Owned By:</b>"<%= list.owner.username%>"</i><br>
             <%= list.description%><br>
             &#8377;<%= list.price.toLocaleString("en-IN") %><br>
-            <%= list.location%><br>
+            <%= list.location.city%><br>
             <%= list.country%>
           </p>
         </div>
@@ -27,7 +26,7 @@
       <%}%>
     </form>
     </div>
-   
+   <!-- <-----------------Give REVIEWS-------------------> 
     <hr>
     <%if(currUser){%>
     <div class="review ">
@@ -56,12 +55,17 @@
       <hr>
       <%}%>
       <div class="row offset-3 ">
-        <h4>All Reviews</h4>
+       <h4>
+        Reviews
+       </h4>
+          <!-- ----------------reviewCard----------------- --> 
         <% for(review of list.reviews){%>
-          <div class="card col-4 ms-4 mb-3 ">
+          <div class="card review-card col-md-5 col-lg-4 col-xl-3 ms-3 mb-3">
             <div class="card-body">
-              <div class="card-title">@<%=review.author.username%></div>
-              <p class="starability-result card-text" data-rating="<%= review.rating%>">
+              <div class="card-title">
+                <i class="fa-solid fa-circle-user"></i>
+                  @<%=review.author.username%></div>
+              <p class="starability-result card-text small" data-rating="<%= review.rating%>">
               </p>
               <div class="card-text"><%= review.comment %></div>
               <div class="card-text"></div>
@@ -72,4 +76,16 @@
           </div>
         <%}%>
       </div> 
+        <br>
+        <h3>Where you'll be</h3>
+        <h5><%=list.location.street %>,<%=list.location.colony%>,<%=list.location.city%>,<%=list.country%></h5>
+        <div>
+          <iframe class="map" width="100%" height="600" src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;
+          coord=<%= coordinates.latitude%>,<%= coordinates.longitude%>&amp;q=1%20<%=list.location.street%>%20<%=list.location.colony%>%2C%20<%=list.location.city%>%2C%20<%=list.country%>&amp;ie=UTF8&amp;t=&amp;
+          z=15&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><br />
+        </div>
+        <!-- <iframe width="100%" height="600" src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;
+        coord=52.70967533219885, -8.020019531250002&amp;q=1%20Grafton%20Street%2C%20Dublin%2C%20Ireland&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed" 
+        frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><br /> -->
 </body>
+

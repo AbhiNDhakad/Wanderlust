@@ -40,5 +40,27 @@ module.exports.isReviewOwner=async(req,res,next)=>
             }
         next();
      }
-    
-        
+
+module.exports.mapIn= function getCoordinates(city)
+        {
+           let weatherUrl=process.env.WEATHER_API_URL;
+           let weatherApiKey=process.env.WEATHER_API_KEY;
+           let getWeatherData=async()=>
+            {
+                
+                let response=await fetch(`${weatherUrl}?q=${city}&limit=1&appid=${weatherApiKey}`);
+                let jsonResponse=await response.json();
+                let cordinates={
+                    latitude:jsonResponse[0].lat,
+                    longitude:jsonResponse[0].lon,
+                }
+                // console.log(jsonResponse[0].lat,"and ",jsonResponse[0].lon);
+                // let data=await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${jsonResponse[0].lat}&lon=${jsonResponse[0].lon}&appid=${ApiKey}&units=metric`);
+                   
+                // let weatherInfo=await fetch(data.url);
+                // let weatherInfoJson=await weatherInfo.json();
+                return cordinates;
+            }
+         let cord=getWeatherData();
+         return cord;
+        }  

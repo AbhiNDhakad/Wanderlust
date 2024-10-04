@@ -20,7 +20,21 @@ const listSchema=new schema({
         }
         },
     price:Number, 
-    location :String,
+    location :
+        {
+            street:{
+                type:String,
+                default:""
+            },
+            colony:{
+                type:String,
+                default:""
+            },
+            city:{
+                type:String,
+                default:""
+            }
+        },
     country:String,
     reviews:[{
         type:schema.Types.ObjectId,

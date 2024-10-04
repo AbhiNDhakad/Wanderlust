@@ -33,17 +33,29 @@
             
               <div class="row">
                 <div class="mb-3 col-md-4">
-                    <label for="location" class="form-label">Location</label> 
-                    <input type="text" class="form-control" required name="listing[location]" placeholder="Enter location" >
-                    <div class="invalid-feedback">Please enter location</div>
+                    <label for="location" class="form-label">Street/Ward</label> 
+                    <input type="text" class="form-control" required name="listing[location][street]" placeholder="Enter Street/Ward" >
+                    <div class="invalid-feedback">Please Enter Street/Ward</div>
                 </div>
                 <div class="mb-3 col-md-8">
-                     <label for="country" class="form-label">Country</label> 
-                     <input type="text"class="form-control" required name="listing[country]" placeholder="Enter country" >
-                     <div class="invalid-feedback">Please enter country</div>
+                    <label for="location" class="form-label">Colony/Area</label> 
+                    <input type="text" class="form-control" required name="listing[location][colony]" placeholder="Enter Colony/Area" >
+                    <div class="invalid-feedback">Please Enter Colony/Area</div>
                 </div>
               </div>
-   
+              <div class="row">
+                <div class="mb-3 col-md-4">
+                    <label for="location" class="form-label">City/Town</label> 
+                    <input type="text" class="form-control" required name="listing[location][city]" placeholder="Enter City/Town" >
+                    <div class="invalid-feedback">Please Enter City/Town</div>  
+                </div> 
+                <div class="mb-3 col-md-8"> 
+                     <label for="country" class="form-label">Country</label> 
+                     <input type="text"class="form-control" required name="listing[country]" placeholder="Enter country" >
+                     <div class="invalid-feedback">Please Enter Country</div>
+                </div>
+       
+              </div>
             <button type="submit" class="btn btn-dark add-btn mb-3">Add</button>
         </form>
         </div> 

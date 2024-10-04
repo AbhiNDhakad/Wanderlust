@@ -5,7 +5,12 @@ module.exports.ListingSchema=joi.object({
     listing:joi.object({
         title:joi.string().required(),
         description:joi.string().required(),
-        location:joi.string().required(),
+        location:joi.object({
+            street:joi.string().default(""),
+            colony:joi.string().default(""),
+            city:joi.string().default("Delhi"),
+        }
+        ).required(),
         country:joi.string().required(),
         price:joi.number().required().min(0),
         image:joi.object({

@@ -1,9 +1,16 @@
+*
+{
+    margin: 0px;
+    padding: 0px;
+}
 body{
 background-color: antiquewhite;
 font-family: "Plus Jakarta Sans", sans-serif;
 display:flex;
 flex-direction:column;
 min-height: 100vh;
+margin:0;
+padding:0;
 }
 .container
 {
@@ -18,7 +25,12 @@ min-height: 100vh;
     height:5rem;
 }
 .nav-link{
+  padding: 8px 15px !important ;
     color:#222222 !important;
+}
+.nav-link:hover{
+    background-color:rgb(210, 209, 209);
+    border-radius: 1.8rem;
 }
 @media screen and (468px<width<768px)
 {
@@ -86,10 +98,40 @@ min-height: 100vh;
 
 .listing-card{
  border:none !important;
- margin-bottom: 1rem;
+ margin-bottom: 2rem;
+ border-radius: 1rem !important;
+ box-shadow: 12px 12px 24px 0 #bbb6b6;
+ position:relative;
+ width:17rem;
 }
+.listing-card:hover
+    {
+        box-shadow: -12px -12px 24px 0 rgba(187, 182, 182,0.7);
+        
+    }
+.listing-card:hover .explore-icon
+        {
+            visibility: visible;
+        }
+.explore-icon
+    {  
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        background-color:#bbb6b6;
+        position:absolute;
+        width:30px;
+        height:30px;
+        margin-left:85%;
+        margin-top: 7%;
+        visibility: hidden;
+    }
+
 .card-img-top{
-    border-radius: 1rem !important;
+    border-top-left-radius: 1rem !important;
+    border-top-right-radius: 1rem !important;
     width:100% !important;
     object-fit: cover;
 } 
@@ -126,3 +168,72 @@ min-height: 100vh;
 {
     display:flex;
 }
+.map
+    {
+        border-radius: 1rem;
+        margin-bottom: 5rem;
+
+    }
+.review-card
+{   padding-left: 0px !important;
+    text-align: center;
+}   
+.filter
+    {
+       display:inline-block;
+       position:relative;
+       text-align: center;
+       margin-left:3rem;
+       margin-top: 20px;
+       opacity: 0.8;
+       margin-bottom: 1rem;
+    }
+ .filter::after
+    {
+       content:'';
+       position: absolute;
+       width: 100%;
+       transform: scaleX(0);
+        height: 3px;
+        bottom: 0;
+        left: 0;
+        background-color:#222222;
+        transition: transform 0.25s ease-out;
+    }
+.filter:hover::after
+    {
+        transform: scaleX(1);
+        transform-origin: center;
+        opacity:1;
+        cursor: pointer;
+    }
+.filters{
+        display:flex;
+        flex-wrap: wrap;
+    }
+.taxes
+    {
+        display:flex;
+        margin-top: 1rem;
+        height: 3rem;
+        border:1px solid black;
+        padding:0.75rem;
+        border-radius: 1rem;
+        margin-bottom: 1rem;
+    }
+.tax-info{
+        display:none;
+    }
+.filter p{
+        font-size: 0.8rem;
+    }
+.show-card
+    {
+        border-radius: 1rem !important;
+        border: none !important;
+    }
+.show-card img
+    {
+        border-radius: 1rem !important;
+    }
+    
