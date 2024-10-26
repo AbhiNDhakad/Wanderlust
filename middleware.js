@@ -47,9 +47,9 @@ module.exports.mapIn= function getCoordinates(city)
            let weatherApiKey=process.env.WEATHER_API_KEY;
            let getWeatherData=async()=>
             {
-                
                 let response=await fetch(`${weatherUrl}?q=${city}&limit=1&appid=${weatherApiKey}`);
                 let jsonResponse=await response.json();
+
                 let cordinates={
                     latitude:jsonResponse[0].lat,
                     longitude:jsonResponse[0].lon,

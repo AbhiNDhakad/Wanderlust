@@ -25,6 +25,7 @@ module.exports.showListing=  async(req,res)=>
             res.redirect("/listings");
         }
       let coordinates= await mapIn(list.location.city);
+      console.log(coordinates);
         res.render("listings/show.ejs",{list,coordinates});
     } 
 
